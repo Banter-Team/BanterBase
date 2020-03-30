@@ -1,4 +1,4 @@
-##Using the virtual enviroment:
+## Using the virtual enviroment:
 from the base directory use 'source venv\Scritps\activate' and you should see (venv) before your command input. This means you are in. If you add any fun things to the project that require any outside python libraries or css resources, make sure you are downloading them to the virtual enviroment and not your local computer. This will ensure that everything works on everybodies computer.
 
 ## Various "managing" Commands - use form the project directory:
