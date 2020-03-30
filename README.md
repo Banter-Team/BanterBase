@@ -1,2 +1,1 @@
 # BanterBase
-## ReadMe for BanterBase
