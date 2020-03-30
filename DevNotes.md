@@ -1,6 +1,10 @@
 ## Using the virtual enviroment:
 from the base directory use 'source venv\Scritps\activate' and you should see (venv) before your command input. This means you are in. If you add any fun things to the project that require any outside python libraries or css resources, make sure you are downloading them to the virtual enviroment and not your local computer. This will ensure that everything works on everybodies computer.
 
+## requirements.txt
+The requirements.txt contains all outside libraries necessary to run the app. After creating a new virtual environment just run `pip install -r requirements.txt` which installs all necessary libraries. 
+To add a new library just add the name to a new line in the requirements file.
+
 ## Various "managing" Commands - use form the project directory:
 1. 'python manage.py runserver' - runs the server on your local host. you can add a port and ip after this but thats kinda useless unless you want two running at once.
 2. 'python manage.py makemigrations' - saves the changes from any registeres models.py files
