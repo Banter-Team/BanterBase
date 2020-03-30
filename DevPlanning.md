@@ -1,2 +1,2 @@
-- [ ] Create Barebone Django App - Will Sanford
+- [ ] Create Barebone Django App - Will
 
