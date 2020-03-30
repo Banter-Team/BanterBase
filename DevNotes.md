@@ -1,6 +1,18 @@
 ## Using the virtual enviroment:
 from the base directory use 'source venv\Scritps\activate' and you should see (venv) before your command input. This means you are in. If you add any fun things to the project that require any outside python libraries or css resources, make sure you are downloading them to the virtual enviroment and not your local computer. This will ensure that everything works on everybodies computer.
 
+Alternatively, if you want simpler commands an work on different venvs to test different library configs `pip install virtualenvwrapper` and add <br>
+
+
+`export WORKON_HOME=~/.virtualenvs` <br>
+`VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'`  # or /usr/local/bin/python3 depending where your python is  <br>
+`source /usr/local/bin/virtualenvwrapper.sh` <br>
+
+
+ to your ~/.bshrc or ~/.zshrc depending on what you use.
+Then you can create a new venv with `mkvirtualenv name` and after that switch and activate venvs with `workon name`
+
+
 ## requirements.txt
 The requirements.txt contains all outside libraries necessary to run the app. After creating a new virtual environment just run `pip install -r requirements.txt` which installs all necessary libraries. 
 To add a new library just add the name to a new line in the requirements file.
