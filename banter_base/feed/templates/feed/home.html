@@ -1,4 +1,14 @@
 {% extends "feed/base.html" %}
 {% block content %}
-    <h1>Hello!</h1>
+    <div class="jumbotron">
+        <h1 class="display-4">This is the middle of the page where stuff goes</h1>
+        <P class='lead'> You can do stuff to the sides or above this blob in the base.html file and anything below it in whatever file you extend into the base</p>
+    </div>
+
+    {% for i in '0123456789'|make_list %}
+        <div class="jumbotron">
+        <h1 class="display-4">This is the middle of the page where stuff goes</h1>
+        <P class='lead'> You can do stuff to the sides or above this blob in the base.html file and anything below it in whatever file you extend into the base</p>
+    </div>
+    {% endfor%}
 {% endblock content %}

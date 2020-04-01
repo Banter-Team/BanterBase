@@ -1,14 +1,90 @@
 {% load static %}
-{% load bootstrap4 %}
+{% load bootstrap4%}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
 
 <!DOCTYPE html>
 <html>
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+
+    <link rel="stylesheet" type="text/css" href="{% static 'feed/main.css' %}">
+
+    {% if title %}
+        <title>Banter Base - {{ title }}</title>
+    {% else %}
+        <title>Banter Base</title>
+    {% endif %}
 </head>
+
 <body>
-{% block content %}{% endblock %}
+    <header class="site-header">
+    <!-- This holds the top navigation bar. We can expand this in any way. This is just a template-->
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="#">Banter Base</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          
+          <div class="collapse navbar-collapse" id="navbarToggle">
+          <!-- Left shifted part of the bar-->
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="#">Home</a>
+              <a class="nav-item nav-link" href="#">Search</a>
+              <a class="nav-item nav-link" href="#">Other Link </a>
+              <a class="nav-item nav-link" href="#">Some Other Link</a>
+            </div>
+
+            <!-- Right shifted part of the nav bar -->
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Login</a>
+                <a class="nav-item nav-link" href="#">Register</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main" class="container-fluid">
+    <!-- This block will display any django messages in the context, and do nothing with no messages in the context-->
+        
+        <div class="row">
+            <!-- This is the left side margin where you could put some stuff-->
+            <div class="col border">
+                You could put something in this box!
+            </div>
+
+            <div class="col-8">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                        </div>
+                    {% endfor%}
+                {% endif %}
+
+                 <!-- This is what we fill with every webpage-->
+                {% block content %}{% endblock %}
+                </div>
+
+
+            <!-- This is the right side margin where you probably put some stuff-->
+            <div class="col border">
+                Or even this one!
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- Just a dank debugging button that re loads css so you dont have to worry about pesky cacheing-->
+    <a href="javascript:(function(){var h,a,f;a=document.getElementsByTagName('link');for(h=0;h<a.length;h++){f=a[h];if(f.rel.toLowerCase().match(/stylesheet/)&amp;&amp;f.href){var g=f.href.replace(/(&amp;|%5C?)forceReload=\d+/,'');f.href=g+(g.match(/\?/)?'&amp;':'?')+'forceReload='+(new Date().valueOf())}}})()" class="btn btn-lg btn-primary-outline">Reload CSS</a>
 </body>
 </html>
