@@ -1,16 +1,10 @@
 {% extends "feed/base.html" %}
 {% block content %}
     <a> Create a new entry here </a>
-    <form action="/banter_entry/" method="post">
-        <div class='nav-link' >
-            Title: <br>
-            <input id="title" type="text" placeholder="Title" required> <br>
-            Story: <br>
-            <textarea class="span6" rows="3" placeholder="What happened" required></textarea> </br>
-            <!-- <input id="story" type="text" name="your_name" required> <br><br> -->
-            Author: <br>
-            <input id="author" type="text" placeholder="Submitted by" required> <br>
-        </div>
-    </form>
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">    
 
 {% endblock content %}
